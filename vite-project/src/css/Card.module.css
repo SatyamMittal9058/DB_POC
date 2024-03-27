@@ -1,0 +1,49 @@
+.container{
+    display:flex;
+    flex-direction:column;
+    
+}
+.symbol,
+.price,
+.securityId{
+    margin-top:5px;
+    margin-bottom:5px;
+    font-size:20px;
+    border:solid 1px;
+    border-radius:5px;
+    padding:8px;
+}
+.btncontainer{
+    display:flex;
+    gap:50px;
+    align-items:center;
+    justify-content:center;
+    margin:5px;
+}
+.buybtn{
+    cursor:pointer;
+    font-size:25px;
+    border:solid 1px;
+    border-radius:25px;
+    padding:5px;
+    padding-left:20px;
+    padding-right:20px;
+    background-color:rgb(52, 239, 52);
+    
+}
+.sellbtn{
+    cursor:pointer;
+    font-size:25px;
+    border:solid 1px;
+    border-radius:25px;
+    padding:5px;
+    padding-left:20px;
+    padding-right:20px;
+    background-color:rgb(246, 49, 49)
+}
+.buybtn:hover{
+    background-color:green;
+}
+.sellbtn:hover{
+    background-color:rgb(186, 2, 2);
+}
