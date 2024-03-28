@@ -8,7 +8,7 @@ function LoginPage(){
     const [cookies,setCookie,,]=useCookies("token");
     const navigate=useNavigate();
     useEffect(()=>{
-        if(cookies.token) console.log("success");
+        if(cookies.token) navigate('/dashboard');
     },[])
     return(
         <div className={loginpage.container}>
@@ -17,8 +17,9 @@ function LoginPage(){
                 <input className={loginpage.inputbox} type="text" placeholder="Enter Access-Token" value={accessToken} onChange={(e)=>setAccessToken(e.target.value)}/>
                 <button className={loginpage.btn} onClick={()=>{
                     setCookie("token",accessToken);
-                    toast.success('Authentication Successfull');
                     navigate('/dashboard');
+                    if(accessToken!=="") toast.success('Authentication Successfull');
+                    else toast.error("Invalid Token");
                 }}>Login</button>
             </div> 
         </div>

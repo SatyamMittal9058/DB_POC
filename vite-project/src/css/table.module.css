@@ -1,3 +1,68 @@
 .table{
-    margin-top:10px;
+    margin-top:12px;
+    border-collapse:collapse;
+    width:100%;
 }
+.table th,
+.table td{
+    border:solid 1px;
+    font-size:20px;
+    padding:2px;
+    text-align:center;
+}
+.table td{
+    cursor:pointer;   
+}
+.table tbody tr:hover{
+    background-color:rgb(252, 106, 106);
+}
+.table thead{
+    background-color:rgb(117, 248, 117);
+}
+.positionType{
+    background-color:beige;
+}
+.negVal{
+    color:red;
+}
+.posVal{
+    color:green;
+}
+.card{
+    display:"flex";
+    justify-content:'center';
+    align-items:'center';
+    flex-direction:"column";
+    padding:"2rem";
+}
+.inputField {
+    margin: 8px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  .buyBtn {
+    margin: 8px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #4caf50; 
+    color: white;
+  }
+  
+  .sellBtn {
+    margin: 8px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #f44336;
+    color: white;
+  }
+

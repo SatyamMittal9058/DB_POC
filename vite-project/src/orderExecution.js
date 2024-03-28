@@ -1,9 +1,10 @@
 import { toast } from "react-toastify";
 export const handleOrder = async (orderType, stockDetail, cookies) => {
-    if (!stockDetail?.tradingSymbol || !stockDetail.securityId || !stockDetail.price) {
+    if (!stockDetail?.tradingSymbol || !stockDetail.securityId || !stockDetail.price || !stockDetail.quantity) {
         if (!stockDetail?.tradingSymbol) toast.error("Please Enter Stock Symbol");
         if (!stockDetail.securityId) toast.error("Please Enter Security Id");
         if (!stockDetail.price) toast.error("Please Enter Price");
+        if (!stockDetail.quantity) toast.error("Please Enter Quantity");
         return
     }
     const url = `${import.meta.env.VITE_BACKEND_URL}/api/order`;
@@ -17,9 +18,9 @@ export const handleOrder = async (orderType, stockDetail, cookies) => {
         "validity": "DAY",
         "tradingSymbol": stockDetail.tradingSymbol,
         "securityId": stockDetail.securityId,
-        "quantity": 1,
+        "quantity": stockDetail.quantity,
         "disclosedQuantity": 0,
-        "price": -stockDetail.price,
+        "price": stockDetail.price,
     }
     const options={
         method:"POST",
@@ -32,7 +33,8 @@ export const handleOrder = async (orderType, stockDetail, cookies) => {
     }
     try{
         const response=await fetch(url,options);
-        const data=response.json();
+        const data=await response.json();
+        console.log(data.data);
         if(data.success) toast.success(data.message);
         else toast.error(data.message);
     }catch(err){

@@ -23,6 +23,7 @@ async function getOpenPosition(req, res) {
     }
 }
 async function executeOrder(req,res){
+    console.log(req.body);
     try{
         const orders=await fetch("https://api.dhan.co/orders",{
             method:"POST",
