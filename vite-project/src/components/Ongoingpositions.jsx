@@ -66,6 +66,7 @@ function Ongoingpositions({ positions, loading }) {
             <TradeCard tradeOpen={cardOpen} tradeClose={CloseCard}>
                 <div className={table.card}>
                     <span>
+                        <label>Quantity</label>
                         <input
                             type="number"
                             min={0}
@@ -76,6 +77,7 @@ function Ongoingpositions({ positions, loading }) {
                             }}
                             className={table.inputField}
                         />
+                        <label>Price</label>
                         <input
                             type="number"
                             min={0}
